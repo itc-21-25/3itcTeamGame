@@ -12,7 +12,7 @@ jobs:
         projectPath:
           - .
         unityVersion:
-          - 2020.3.1f1 # Enter the Unity version of the ULF you registered in Secrets.
+          - 2022.3.11f1 # Enter the Unity version of the ULF you registered in Secrets.
         testMode:
           - playmode
           - editmode
