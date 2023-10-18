@@ -1,6 +1,6 @@
 name: Test project 🚧👷
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   testAllModes:
