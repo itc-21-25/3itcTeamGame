@@ -1,4 +1,4 @@
-name: Get Unity license activation file 🔐
+name: Genere unity license activation file 🔐
 
 on: workflow_dispatch
 

@@ -1,6 +1,6 @@
-name: Build project
+name: Build project 🏗️🚧👷
 
-on: [push, pull_request]
+on: [pull_request: { branches: ['main', 'dev'], status: 'approved' }]
 
 jobs:
   buildForAllSupportedPlatforms:
@@ -34,3 +34,16 @@ jobs:
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
+      - name: Create release
+  uses: actions/create-release@v1
+  with:
+    tag_name: ${{ github.ref }}
+    target_commitish: ${{ github.ref }}
+    name: ${{ github.event.head_commit.message }}
+    description: Release of ${{ github.ref }}
+    draft: false
+    prerelease: false
+    upload_artifacts: true
+    artifacts:
+      - name: Build-${{ matrix.targetPlatform }}
+        path: build/${{ matrix.targetPlatform }}"
