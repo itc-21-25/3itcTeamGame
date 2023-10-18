@@ -1,23 +1,26 @@
 name: Build project 🏗️🚧👷
 
 on:
-  pull_request:
+  release:
     types:
-      - labeled
+      - created
 
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'Build')
     strategy:
       fail-fast: false
       matrix:
         targetPlatform:
-          # - StandaloneWindows # Build a Windows standalone.
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          # - WebGL # WebGL.
+          - StandaloneWindows
+          - StandaloneWindows64
+          - WebGL
     steps:
+      - if: github.event.release.tag_name == 'devBuild' && github.event.release.target_commitish == 'dev'
+        run: echo "Building from 'dev' branch with 'devBuild' tag"
+      - if: github.event.release.tag_name == 'mainBuild' && github.event.release.target_commitish == 'main'
+        run: echo "Building from 'main' branch with 'mainBuild' tag"
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -38,16 +41,3 @@ jobs:
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
-      - name: Create release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          target_commitish: ${{ github.ref }}
-          name: ${{ github.event.head_commit.message }}
-          description: Release of ${{ github.ref }}
-          draft: false
-          prerelease: false
-          upload_artifacts: true
-          artifacts:
-            - name: Build-${{ matrix.targetPlatform }}
-              path: build/${{ matrix.targetPlatform }}
