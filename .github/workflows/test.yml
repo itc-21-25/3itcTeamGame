@@ -16,7 +16,7 @@ jobs:
           node-version: 16
 
       - name: Install Unity Test Runner
-        run: npm install -g unity-test-runner
+        run: npm i @nativescript/unit-test-runner
 
       - name: Run tests
         run: unity-test-runner
