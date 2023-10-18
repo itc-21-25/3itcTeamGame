@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - ${{ matrix.projectPath }}
+          - 3itcTeamGame
         testMode:
           - playmode
           - editmode
