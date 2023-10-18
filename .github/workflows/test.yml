@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - 3itcTeamGame
+          - ./
         testMode:
           - playmode
           - editmode
