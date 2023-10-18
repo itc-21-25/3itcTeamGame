@@ -1,18 +1,22 @@
 name: Build project 🏗️🚧👷
 
-on: [pull_request: { branches: ['main', 'dev'], status: 'approved' }]
+on:
+  pull_request:
+    types:
+      - labeled
 
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'Build')
     strategy:
       fail-fast: false
       matrix:
         targetPlatform:
-          - StandaloneWindows # Build a Windows standalone.
+          # - StandaloneWindows # Build a Windows standalone.
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - WebGL # WebGL.
+          # - WebGL # WebGL.
     steps:
       - uses: actions/checkout@v3
         with:
@@ -35,15 +39,15 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
       - name: Create release
-  uses: actions/create-release@v1
-  with:
-    tag_name: ${{ github.ref }}
-    target_commitish: ${{ github.ref }}
-    name: ${{ github.event.head_commit.message }}
-    description: Release of ${{ github.ref }}
-    draft: false
-    prerelease: false
-    upload_artifacts: true
-    artifacts:
-      - name: Build-${{ matrix.targetPlatform }}
-        path: build/${{ matrix.targetPlatform }}"
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          target_commitish: ${{ github.ref }}
+          name: ${{ github.event.head_commit.message }}
+          description: Release of ${{ github.ref }}
+          draft: false
+          prerelease: false
+          upload_artifacts: true
+          artifacts:
+            - name: Build-${{ matrix.targetPlatform }}
+              path: build/${{ matrix.targetPlatform }}
