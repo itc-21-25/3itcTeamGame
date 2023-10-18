@@ -1,22 +1,50 @@
-name: Run Unity tests
-on:
-  push:
-  pull_request:
+name: Test
+
+on: [push, pull_request]
 
 jobs:
   test:
+    name: ${{ matrix.testMode }} on ${{ matrix.unityVersion }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - .
+        unityVersion:
+          - 2020.3.1f1 # Enter the Unity version of the ULF you registered in Secrets.
+        testMode:
+          - playmode
+          - editmode
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install Unity
-        uses: actions/setup-node@v1
+      # Checkout
+      - uses: actions/checkout@v2
         with:
-          node-version: 16
+          lfs: true
 
-      - name: Install Unity Test Framework
-        run: npm install -g unity-test-framework
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}
+          restore-keys: |
+            Library-
 
-      - name: Run tests
-        run: unity-test-framework
+      # Test
+      - uses: game-ci/unity-test-runner@v2
+        id: tests
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          testMode: ${{ matrix.testMode }}
+          artifactsPath: ${{ matrix.testMode }}-artifacts
+          checkName: ${{ matrix.testMode }} Test Results
+
+      # Upload Artifact
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Test results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.artifactsPath }}
