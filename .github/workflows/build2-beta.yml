@@ -1,9 +1,9 @@
 name: Build project
 
-on:
-  release:
-    types:
-      - created
+on: workflow_dispatch
+  # release:
+  #   types:
+  #     - created
 
 jobs:
   buildForAllSupportedPlatforms:
