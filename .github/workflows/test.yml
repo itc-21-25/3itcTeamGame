@@ -5,7 +5,7 @@ on: [pull_request]
 jobs:
   testAllModes:
     name: Test in ${{ matrix.testMode }}
-    runs-on: self-hosted
+    runs-on: teamRunner
     strategy:
       fail-fast: false
       matrix:
