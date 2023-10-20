@@ -1,4 +1,4 @@
-name: Build project
+name: ❌ Build project and assign to release (work in progress) 
 
 on: workflow_dispatch
   # release:

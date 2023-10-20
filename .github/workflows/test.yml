@@ -1,11 +1,11 @@
-name: Test project 🚧👷
+name: Test project 🚧👷 📟 Remote server test
 
 on: [pull_request]
 
 jobs:
   testAllModes:
     name: Test in ${{ matrix.testMode }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       matrix:
