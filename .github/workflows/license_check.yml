@@ -1,6 +1,6 @@
 name: Verify unity license 🎮🛂
 
-on: push
+on: [pull_request]
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
