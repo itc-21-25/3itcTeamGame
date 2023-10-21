@@ -18,7 +18,14 @@
   </p>
 </p>
 
-![Contributors](https://img.shields.io/github/contributors/dolezalll/3itcTeamGame?color=dark-green) ![Issues](https://img.shields.io/github/issues/dolezalll/3itcTeamGame) 
+![Contributors](https://img.shields.io/github/contributors/dolezalll/3itcTeamGame?color=dark-green) ![Issues](https://img.shields.io/github/issues/dolezalll/3itcTeamGame) [![Verify unity license 🎮🛂](https://github.com/dolezalll/3itcTeamGame/actions/workflows/license_check.yml/badge.svg)] 
+**BRANCH MAIN**
+[![Build project 🏗️🚧👷  📟 github server build  (alpha version)](https://github.com/dolezalll/3itcTeamGame/actions/workflows/alpha-build.yml/badge.svg?branch=main)](https://github.com/dolezalll/3itcTeamGame/actions/workflows/alpha-build.yml)
+[![Test project 🚧👷 📟 github server testing](https://github.com/dolezalll/3itcTeamGame/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/dolezalll/3itcTeamGame/actions/workflows/test.yml)
+
+**BRANCH DEV**
+[![Build project 🏗️🚧👷  📟 github server build  (alpha version)](https://github.com/dolezalll/3itcTeamGame/actions/workflows/alpha-build.yml/badge.svg?branch=dev)](https://github.com/dolezalll/3itcTeamGame/actions/workflows/alpha-build.yml)
+[![Test project 🚧👷 📟 github server testing](https://github.com/dolezalll/3itcTeamGame/actions/workflows/test.yml/badge.svg?branch=dev)](https://github.com/dolezalll/3itcTeamGame/actions/workflows/test.yml)
 
 ## Table Of Contents
 
