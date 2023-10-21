@@ -1,26 +1,19 @@
-name: ❌ Build project 🏗️🚧👷 (work in progress)
+name: Build project 🏗️🚧👷  📟 Remote server build  (alpha version)
 
 on: workflow_dispatch
-  # release:
-  #   types:
-  #     - created
 
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: self-hosted 
+    runs-on: teamRunner
     strategy:
       fail-fast: false
       matrix:
         targetPlatform:
-          - StandaloneWindows
-          - StandaloneWindows64
-          - WebGL
+          # - StandaloneWindows # Build a Windows standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          # - WebGL # WebGL.
     steps:
-      - if: github.event.release.tag_name == 'devBuild' && github.event.release.target_commitish == 'dev'
-        run: echo "Building from 'dev' branch with 'devBuild' tag"
-      - if: github.event.release.tag_name == 'mainBuild' && github.event.release.target_commitish == 'main'
-        run: echo "Building from 'main' branch with 'mainBuild' tag"
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0

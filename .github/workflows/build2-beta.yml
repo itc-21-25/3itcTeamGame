@@ -1,4 +1,4 @@
-name: ❌ Build project 🏗️🚧👷 (work in progress)
+name: ❌ Build project and assign to release (work in progress) 
 
 on: workflow_dispatch
   # release:
@@ -8,14 +8,12 @@ on: workflow_dispatch
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: self-hosted 
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         targetPlatform:
-          - StandaloneWindows
           - StandaloneWindows64
-          - WebGL
     steps:
       - if: github.event.release.tag_name == 'devBuild' && github.event.release.target_commitish == 'dev'
         run: echo "Building from 'dev' branch with 'devBuild' tag"
@@ -41,3 +39,27 @@ jobs:
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
+      - name: Update Release
+        id: update_release
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data } = await github.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: context.payload.release.tag_name
+            });
+
+            await github.repos.uploadReleaseAsset({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: data.id,
+              url: data.upload_url,
+              name: `Build-${{ matrix.targetPlatform }}`,
+              data: require('fs').readFileSync(`build/${{ matrix.targetPlatform }}`),
+              headers: {
+                'content-type': 'application/zip',
+                'content-length': require('fs').statSync(`build/${{ matrix.targetPlatform }}`).size
+              }
+            });
