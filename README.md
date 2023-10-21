@@ -10,9 +10,7 @@
     Collaborative Unity Project for HEV subject : A Classroom Endeavor!
     <br/>
     <br/>
-    <br/>
-    <br/>
-    <a href="https://github.com/dolezalll/3itcTeamGame">View releases</a>
+    <a href="https://github.com/dolezalll/3itcTeamGame/releases">View releases</a>
     .
     <a href="https://github.com/dolezalll/3itcTeamGame/issues">Report Bug</a>
     .
@@ -25,13 +23,11 @@
 ## Table Of Contents
 
 * [About the Project](#about-the-project)
+* [Contributors roles](#contributors-roles)
 * [Built With](#built-with)
 * [Getting Started](#getting-started)
-  * [Installation](#installation)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
 
 ## About The Project
 
@@ -39,7 +35,7 @@
 
 This Unity game is the result of collaborative work by the entire class for the HEV subject. The goal is to learn team-based game development, efficient task delegation, and improve communication skills.
 
-##Contributors roles
+## Contributors roles
 
 > **Rozdělení týmu**
 >
