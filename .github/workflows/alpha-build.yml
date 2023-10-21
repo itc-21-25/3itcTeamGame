@@ -1,11 +1,11 @@
-name: Build project 🏗️🚧👷  📟 Remote server build  (alpha version)
+name: Build project 🏗️🚧👷  📟 github server build  (alpha version)
 
 on: workflow_dispatch
 
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
-    runs-on: teamRunner
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:

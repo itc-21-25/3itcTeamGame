@@ -1,11 +1,11 @@
-name: Test project 🚧👷 📟 Remote server test
+name: Test project 🚧👷 📟 github server testing
 
 on: [pull_request]
 
 jobs:
   testAllModes:
     name: Test in ${{ matrix.testMode }}
-    runs-on: teamRunner
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:

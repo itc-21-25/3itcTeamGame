@@ -25,7 +25,13 @@
 
 >***Oprava bugu***
 > **Zápis**:  team-name/fix/nameOfFunction
-> **Například**:  prg1/feature/keyboardMappingController
+> **Například**:  prg1/fix/keyboardMappingController
+
+**Jen pro management**
+
+>***Update (branch rebase, MR, doc edit, typo fix,...,.)***
+> **Zápis**:  management/update/nameOfUpdate
+> **Například**:  management/update/readmeEdit
 
 
 **Commit**
