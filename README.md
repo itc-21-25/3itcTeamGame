@@ -1,11 +1,12 @@
+
 <br/>
 <p align="center">
   <a href="https://github.com/dolezalll/3itcTeamGame">
     <img src="https://github.com/dolezalll/3itcTeamGame/blob/main/.github/files/readme-gif.gif?raw=true" alt="Logo" width="160" height="160">
   </a>
 
-  <h3 align="center">3ITC TEAM GAME</h3>
-
+   <p align="center"><img width="400" height="170" src="https://svg-banners.vercel.app/api?type=luminance&text1=VERSION%20%0.0.1%20%🖥&width=400&height=100"></p>
+ 
   <p align="center">
     Collaborative Unity Project for HEV subject : A Classroom Endeavor!
     <br/>
