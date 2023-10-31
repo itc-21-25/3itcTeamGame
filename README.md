@@ -121,7 +121,7 @@ Also use Summary and Description
 
 - **Code refactoring**
     - Format: `refactor: ID/description`
-    - Example: `` `refactor: 15/new binding method`` `
+    - Example: `refactor: 15/new binding method`
 
 - **Performance optimization**
     - Format: `perf: ID/description`
