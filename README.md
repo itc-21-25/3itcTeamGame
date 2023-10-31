@@ -86,25 +86,25 @@ See the [open issues](https://github.com/dolezalll/3itcTeamGame/issues) for a li
 
 #### Merge Request
 
-- **New feature**
-    - Format: `team-name/feature/nameOfFunction`
-    - Example: `prg1/feature/keyboardMappingController`
+- **New feature** (ID FROM ISSUES!)
+    - Format: `team-name/feature/ID-nameOfFunction`
+    - Example: `prg1/feature/20-gameManagerImplementation`
 
-- **Bug fix**
-    - Format: `team-name/fix/nameOfFunction`
-    - Example: `prg1/fix/keyboardMappingController`
+- **Bug fix** (ID FROM ISSUES!)
+    - Format: `team-name/fix/ID-nameOfFunction`
+    - Example: `prg1/fix/20-repairingWrongImplementationOfGameManager`
 
 ---
 
 #### Only for management
 
 - **Update (branch rebase, MR, doc edit, typo fix, etc.)**
-    - Format: `management/update/nameOfUpdate`
-    - Example: `management/update/readmeEdit`
+    - Format: `management/update/ID-nameOfUpdate`
+    - Example: `management/update/01-readmeEdit`
 
 ---
 
-#### Commit
+#### Commit (USE EVERYWHERE ISSUE ID!)
 
 It is important to properly describe what you did in the commit!
 
@@ -112,17 +112,17 @@ Also use Summary and Description
 *Only a short description in Summary, a longer one in Description if needed.*
 
 - **New feature**
-    - Format: `feat: description`
-    - Example: `feat: binding for keyboard`
+    - Format: `feat: ID/description`
+    - Example: `feat: 03/binding for keyboard`
 
 - **Bug fix**
-    - Format: `fix: description`
-    - Example: `fix: forward move binding`
+    - Format: `fix: ID/description`
+    - Example: `fix: 14/forward move binding`
 
 - **Code refactoring**
-    - Format: `refactor: description`
-    - Example: `` `refactor: new binding method`` `
+    - Format: `refactor: ID/description`
+    - Example: `` `refactor: 15/new binding method`` `
 
 - **Performance optimization**
-    - Format: `perf: description`
-    - Example: `perf: debug and change perfomance of method`
+    - Format: `perf: ID/description`
+    - Example: `perf: 38/debug and change perfomance of method`
