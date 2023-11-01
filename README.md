@@ -52,7 +52,7 @@ This Unity game is the result of collaborative work by the entire class for the 
 > |---------------------------|----------------|-------------------------------------|
 > | MANAGEMENT                | ADAM DOLEŽAL    | VLADIMIR VORŠILKA                   |
 > | 3D MODELING               | HONZA ADAM      | JŮZL, PROCHÁZKA                     |
-> | 2D GRAFIKA UI             | MICHAL BÍLEK    | ALEŠ MRÁZEK                        |
+> | 2D GRAPHIC UI             | MICHAL BÍLEK    | ALEŠ MRÁZEK                        |
 > | PRG1                      | PETR POLÁK      | BUROCK, FLORIÁN, KŘÍSTEK, BONDAR     |
 > | PRG2                      | MARTIN JEŘÁBEK  | VOSTROVSKÝ, PROCHÁZKA, SVĚTELSKÝ, MÁKA, POŠVIC |
 > | MERGE MASTER              | MARTIN REICHELT | JEN MARCYN                          |
