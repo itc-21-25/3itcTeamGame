@@ -1,4 +1,3 @@
-cgfgffgf
 <br/>
 <p align="center">
   <a href="https://github.com/dolezalll/3itcTeamGame">
