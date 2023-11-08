@@ -8,7 +8,7 @@
    <p align="center"><img width="400" height="170" src="https://svg-banners.vercel.app/api?type=luminance&text1=VERSION%20%0.0.1%20%🖥&width=400&height=100"></p>
  
   <p align="center">
-    Collaborative Unity Project for HEV subject : A Classroom Endeavor!
+    Collaborative Unity Project for HEV subject: A Classroom Endeavor!
     <br/>
     <br/>
     <a href="https://github.com/dolezalll/3itcTeamGame/releases">View releases</a>
