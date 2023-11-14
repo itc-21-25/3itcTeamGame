@@ -6,8 +6,7 @@ public class UIManager : MonoBehaviour, IManager
 {
     static UIManager _instance;
     public static UIManager Instance => _instance;
-
-    List<UIController> controllers = new List<UIController>();
+    List<BaseUIController> controllers = new List<BaseUIController>();
     private void Awake()
     {
         if(_instance == null)
@@ -26,11 +25,11 @@ public class UIManager : MonoBehaviour, IManager
         //TODO: Implement
         throw new System.NotImplementedException();
     }
-    public void AddController(UIController controller)
+    public void AddController(BaseUIController controller)
     {
         controllers.Add(controller);
     }
-    void HideUI()
+    void HideAllUI()
     {
         for (int i = 0; i < controllers.Count; i++)
         {
