@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseUIController
+public abstract class BaseUIController : MonoBehaviour
 {
     [SerializeField] protected Canvas _uiRoot;
     protected virtual void AddToManager()
