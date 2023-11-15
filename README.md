@@ -1,5 +1,5 @@
 <br/>
-<p align="center">
+<p align="center">aíusgd
   <a href="https://github.com/dolezalll/3itcTeamGame">
     <img src="https://github.com/dolezalll/3itcTeamGame/blob/main/.github/files/readme-gif.gif?raw=true" alt="Logo" width="160" height="160">
   </a>
