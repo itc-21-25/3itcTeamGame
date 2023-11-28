@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
         sfxSlider.onValueChanged.AddListener(ChangeSFXVolume);
     }
 
-    private void ChangeMusicVolume(float volume)
+    public void ChangeMusicVolume(float volume)
     {
         // Update music volume and save it to PlayerPrefs
         PlayerPrefs.SetFloat("MusicVolume", volume);
@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
         // Example: AudioManager.SetMusicVolume(volume);
     }
 
-    private void ChangeSFXVolume(float volume)
+    public void ChangeSFXVolume(float volume)
     {
         // Update SFX volume and save it to PlayerPrefs
         PlayerPrefs.SetFloat("SFXVolume", volume);

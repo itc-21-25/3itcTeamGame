@@ -13,9 +13,9 @@ public class PlayerManager : MonoBehaviour
     private CashManager _CashManager = null;
     public CashManager CashManager => _CashManager;
 
-    /*[SerializeField]
+    [SerializeField]
     private AudioManager _AudioManager = null;
-    public AudioManager AudioManager => _AudioManager;*/
+    public AudioManager AudioManager => _AudioManager;
     #endregion
 
     public void UpdateMovement()
@@ -23,8 +23,13 @@ public class PlayerManager : MonoBehaviour
         _Movement.Update();
     }
 
-    public void PlayAudio()
+    public void ChangeMusicVolume(float volume)
     {
+        _AudioManager.ChangeMusicVolume(volume);
+    }
 
+    public void ChangeSFXVolume(float volume)
+    {
+        _AudioManager.ChangeSFXVolume(volume);
     }
 }
