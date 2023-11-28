@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    void Update()
+    public void Update()
     {
         // Získání vstupu od hráèe
         float horizontalInput = Input.GetAxis("Horizontal");
