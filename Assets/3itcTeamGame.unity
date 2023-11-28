@@ -124,9 +124,13 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1 &1499718221
 =======
 --- !u!1 &381868583
+>>>>>>> Stashed changes
+=======
+--- !u!1 &846118448
 >>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - component: {fileID: 1499718224}
   - component: {fileID: 1499718223}
   - component: {fileID: 1499718222}
@@ -143,6 +148,103 @@ GameObject:
   - component: {fileID: 381868586}
   - component: {fileID: 381868585}
   - component: {fileID: 381868584}
+>>>>>>> Stashed changes
+=======
+  - component: {fileID: 846118451}
+  - component: {fileID: 846118450}
+  - component: {fileID: 846118449}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &846118449
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846118448}
+  m_Enabled: 1
+--- !u!20 &846118450
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846118448}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &846118451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846118448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1662048042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662048045}
+  - component: {fileID: 1662048044}
+  - component: {fileID: 1662048043}
 >>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Directional Light
@@ -152,9 +254,13 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!114 &1499718222
 =======
 --- !u!114 &381868584
+>>>>>>> Stashed changes
+=======
+--- !u!114 &1662048043
 >>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,9 +268,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1499718221}
 =======
   m_GameObject: {fileID: 381868583}
+>>>>>>> Stashed changes
+=======
+  m_GameObject: {fileID: 1662048042}
 >>>>>>> Stashed changes
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -183,9 +293,13 @@ MonoBehaviour:
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!108 &1499718223
 =======
 --- !u!108 &381868585
+>>>>>>> Stashed changes
+=======
+--- !u!108 &1662048044
 >>>>>>> Stashed changes
 Light:
   m_ObjectHideFlags: 0
@@ -193,9 +307,13 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1499718221}
 =======
   m_GameObject: {fileID: 381868583}
+>>>>>>> Stashed changes
+=======
+  m_GameObject: {fileID: 1662048042}
 >>>>>>> Stashed changes
   m_Enabled: 1
   serializedVersion: 10
@@ -253,9 +371,13 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!4 &1499718224
 =======
 --- !u!4 &381868586
+>>>>>>> Stashed changes
+=======
+--- !u!4 &1662048045
 >>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
@@ -263,9 +385,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1499718221}
 =======
   m_GameObject: {fileID: 381868583}
+>>>>>>> Stashed changes
+=======
+  m_GameObject: {fileID: 1662048042}
 >>>>>>> Stashed changes
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
@@ -275,6 +401,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 --- !u!1 &2087767887
 =======
@@ -701,10 +828,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   - {fileID: 2087767890}
   - {fileID: 1499718224}
@@ -713,4 +843,8 @@ SceneRoots:
   - {fileID: 381868586}
   - {fileID: 400088377}
   - {fileID: 1058933926}
+>>>>>>> Stashed changes
+=======
+  - {fileID: 846118451}
+  - {fileID: 1662048045}
 >>>>>>> Stashed changes
