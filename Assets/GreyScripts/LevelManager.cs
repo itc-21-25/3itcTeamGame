@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     LevelManager levelManager;
     [SerializeField] private int levelId = 0;
-    [SerializeField] private int maxLevelId = SceneManager.GetAllScenes().Length - 1;
+    [SerializeField] private int maxLevelId = SceneManager.sceneCount - 1;
     
     
     public void StartLevel(int level)
