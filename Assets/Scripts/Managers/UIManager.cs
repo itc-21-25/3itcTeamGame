@@ -1,12 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour, IManager
 {
     static UIManager _instance;
-    public static UIManager Instance => _instance;
+
     List<BaseUIController> controllers = new List<BaseUIController>();
+
+    public static UIManager Instance => _instance;
     private void Awake()
     {
         if(_instance == null)
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour, IManager
             GameManager.Instance.AddManager(Instance);
         }
     }
+
     public void Stop()
     {
         //TODO: Implement
@@ -29,6 +31,7 @@ public class UIManager : MonoBehaviour, IManager
     {
         controllers.Add(controller);
     }
+
     void HideAllUI()
     {
         for (int i = 0; i < controllers.Count; i++)
