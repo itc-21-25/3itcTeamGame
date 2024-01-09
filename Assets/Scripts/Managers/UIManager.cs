@@ -10,11 +10,7 @@ public class UIManager : MonoBehaviour, IManager
     public static UIManager Instance => _instance;
     private void Awake()
     {
-        if(_instance == null)
-        {
-            _instance = this;
-            GameManager.Instance.AddManager(Instance);
-        }
+        
     }
 
     public void Stop()
@@ -24,8 +20,12 @@ public class UIManager : MonoBehaviour, IManager
     }
     void IManager.Start()
     {
-        //TODO: Implement
-        throw new System.NotImplementedException();
+        if (_instance == null)
+        {
+            _instance = this;
+            GameManager.Instance.AddManager(Instance);
+        }
+        Debug.Log("Test");
     }
     public void AddController(BaseUIController controller)
     {

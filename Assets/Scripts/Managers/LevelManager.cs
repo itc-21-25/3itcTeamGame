@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     LevelManager levelManager;
     [SerializeField] private int levelId = 0;
-    [SerializeField] private int maxLevelId = SceneManager.sceneCount - 1;
+    [SerializeField] private int maxLevelId = 1;
     
     
     public void StartLevel(int level)
