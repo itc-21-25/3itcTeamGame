@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BaseUIController : MonoBehaviour
 {
-    [SerializeField] protected GameObject _uiRoot;
+    [SerializeField] protected Canvas _uiRoot;
     protected virtual void AddToManager()
     {
         UIManager.Instance.AddController(this);

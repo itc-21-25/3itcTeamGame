@@ -5,7 +5,7 @@ public class UIManager : MonoBehaviour, IManager
 {
     static UIManager _instance;
 
-    List<BaseUIController> _controllers = new List<BaseUIController>();
+    List<BaseUIController> controllers = new List<BaseUIController>();
 
     public static UIManager Instance => _instance;
     private void Awake()
@@ -13,11 +13,7 @@ public class UIManager : MonoBehaviour, IManager
         if(_instance == null)
         {
             _instance = this;
-            GameManager.Instance.AddManager(this);
-        }
-        else
-        {
-            GameManager.Instance.AddManager(this);
+            GameManager.Instance.AddManager(Instance);
         }
     }
 
@@ -33,14 +29,14 @@ public class UIManager : MonoBehaviour, IManager
     }
     public void AddController(BaseUIController controller)
     {
-        _controllers.Add(controller);
+        controllers.Add(controller);
     }
 
     void HideAllUI()
     {
-        for (int i = 0; i < _controllers.Count; i++)
+        for (int i = 0; i < controllers.Count; i++)
         {
-            _controllers[i].HideUI();
+            controllers[i].HideUI();
         }
     }
 }

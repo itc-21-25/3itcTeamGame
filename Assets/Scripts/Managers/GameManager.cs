@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -70,14 +69,6 @@ public class GameManager : MonoBehaviour
         {
             _levelNames.Add(Levels[i].name);
         }
-    }
-    public void QuitApp()
-    {
-        if(Application.isEditor)
-        {
-            EditorApplication.ExitPlaymode();
-        }
-        Application.Quit();
     }
 }
 
