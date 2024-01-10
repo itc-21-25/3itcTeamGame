@@ -13,7 +13,6 @@ public class LevelWinUiController : BaseUiController
         _GameManager.LevelManager.NextLevel();
         _GameManager.UnpauseGame();
         _UiManager.LevelWinUiController.Unload();
-        _UiManager.CrossHairUiController.Load();
     }
 
     public void QuitGame()

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
-    [SerializeField] private CrossHairUiController _CrossHairUiController = null;
-    public CrossHairUiController CrossHairUiController => _CrossHairUiController;
 
     [SerializeField] private MainMenuUiController _MainMenuUiController = null;
     public MainMenuUiController MainMenuUiController => _MainMenuUiController;
@@ -29,13 +27,11 @@ public class UiManager : MonoBehaviour
     {
         
         _ShopManager.Init();
-        _CrossHairUiController.Init();
         _MainMenuUiController.Init();
         _GameOverUi.Init();
         _LevelWinUiController.Init();
         _LevelUiController.Init();
 
-        _CrossHairUiController.Unload();
         _MainMenuUiController.Load();
         _GameOverUi.Unload();
         _LevelWinUiController.Unload();

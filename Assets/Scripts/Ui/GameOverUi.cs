@@ -8,7 +8,6 @@ public class GameOverUi : BaseUiController
     {
         _GameManager.LevelManager.RestartLevel();
         _UiManager.GameOverUi.Unload();
-        _UiManager.CrossHairUiController.Load();
         _GameManager.UnpauseGame();
     }
 

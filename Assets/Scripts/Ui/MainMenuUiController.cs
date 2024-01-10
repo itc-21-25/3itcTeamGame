@@ -14,6 +14,6 @@ public class MainMenuUiController : BaseUiController
         _GameManager.LevelManager.StartLevel(0);
         _GameManager.UnpauseGame();
         _UiManager.MainMenuUiController.Unload();
-        _UiManager.CrossHairUiController.Load();
+        Debug.Log("new game click");
     }
 }

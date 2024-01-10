@@ -48,7 +48,6 @@ public class SnowMan : MonoBehaviour
                 _SnowManWorkInProgress.SetActive(false);
 
                 _GameManager.PauseGame();
-                _GameManager.UiManager.CrossHairUiController.Unload();
                 _GameManager.UiManager.LevelWinUiController.Load();
                 _GameManager.LevelManager.EndLevel();
             }

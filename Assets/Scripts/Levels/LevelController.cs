@@ -28,7 +28,6 @@ public class LevelController : MonoBehaviour
     {
        
         _GameManager.PlayerManager.PlayerAudioManager.PlayDeadAudio();
-            _GameManager.UiManager.CrossHairUiController.Unload();
             _GameManager.UiManager.GameOverUi.Load();
             _GameManager.PauseGame();
             EndLevel();
