@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "/BeybladeComponents/Component")]
+[CreateAssetMenu(menuName = "BeybladeComponents/Component")]
 public class Beyblade : ScriptableObject
 {
     [field: SerializeField] int Damage;
