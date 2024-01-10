@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour
     //[SerializeField] private ShopManager _ShopManager = null;
     //public ShopManager ShopManager => _ShopManager;
 
+
     private void Awake()
     {
         if (_instance == null)
