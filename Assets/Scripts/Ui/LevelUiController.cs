@@ -13,14 +13,9 @@ public class LevelUiController : BaseUiController
 
     public override void UpdateUiCanvas()
     {
-        if (_MyCanvas.enabled && _GameManager.SnowBall != null && _GameManager.SnowMan != null)
+        if (_MyCanvas.enabled && _GameManager.SnowMan != null)
         {
-            float scale = _GameManager.SnowBall.Scale.x * 100;
-            scale = Mathf.Round(scale);
-            scale = scale / 100;
-
             _Force.text = _GameManager.PlayerManager.PlayerHandController.ImpulseForce.ToString();
-            _SnowBallScale.text = scale.ToString();
 
             _SnowBallMinScale.text = _GameManager.SnowMan.MinSnowBallScale.ToString();
             _SnowBallMaxScale.text = _GameManager.SnowMan.MaxSnowBallScale.ToString();

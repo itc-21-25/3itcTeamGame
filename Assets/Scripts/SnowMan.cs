@@ -37,7 +37,8 @@ public class SnowMan : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        SnowBall snowBall = null;
+        /*
+         * could be used when game ends just copy the code somewhere else
 
         if (collision.transform.TryGetComponent(out snowBall))
         {
@@ -53,6 +54,7 @@ public class SnowMan : MonoBehaviour
                 _GameManager.LevelManager.EndLevel();
             }
         }
+        */
     }
 
     private void OnDestroy()

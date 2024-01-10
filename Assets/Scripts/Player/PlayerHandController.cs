@@ -31,22 +31,6 @@ public class PlayerHandController : MonoBehaviour
 
     public void UpdateHand()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, _RaycastRadius))
-            {
-                SnowBall snowBall = null;
-
-                if (hit.transform.gameObject.TryGetComponent(out snowBall))
-                {
-                    Vector3 hitDirection = hit.point - transform.position;
-                    Rigidbody snowBallRb = snowBall.GetComponent<Rigidbody>();
-                    snowBallRb.AddForce(hitDirection.normalized * _ImpulseForce, ForceMode.Impulse);
-                }
-            }
-        }
     }
 }

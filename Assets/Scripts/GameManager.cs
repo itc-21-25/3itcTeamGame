@@ -9,9 +9,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerManager _PlayerManager = null;
     public PlayerManager PlayerManager => _PlayerManager;
 
-    [SerializeField] private SnowBall _SnowBall = null;
-    public SnowBall SnowBall => _SnowBall;
-
     [SerializeField] private SnowMan _SnowMan = null;
     public SnowMan SnowMan => _SnowMan;
 
@@ -58,23 +55,7 @@ public class GameManager : MonoBehaviour
         {
             _PlayerManager.UpdatePlayer();
             _UiManager.UpdateUi();
-
-            if (_SnowBall != null)
-            {
-                _SnowBall.UpdateSnowBall();
-            }
         }
-    }
-
-    public void RegisterSnowBall(SnowBall snowBall)
-    {
-        _SnowBall = snowBall;
-        snowBall.Init();
-    }
-
-    public void UnregisterSnowBall()
-    {
-        _SnowBall = null;
     }
 
     public void UnregisterSnowMan()

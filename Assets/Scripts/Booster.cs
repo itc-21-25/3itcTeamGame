@@ -10,6 +10,7 @@ public class Booster : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
         SnowBall snowBall = null;
         PlayerCashManager playerCashManager = FindObjectOfType<PlayerCashManager>(); // pøístup k cash manageru
 
@@ -23,5 +24,6 @@ public class Booster : MonoBehaviour
 
             Destroy(gameObject);
         }
+        */
     }
 }

@@ -14,6 +14,7 @@ public class Tree : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
         SnowBall snowBall = null;
         PlayerCashManager playerCashManager = FindObjectOfType<PlayerCashManager>(); // vytvoøení instance tøídy
 
@@ -22,9 +23,7 @@ public class Tree : MonoBehaviour
             StartCoroutine(Animation());
             playerCashManager.ReduceCoins(TreeCoinsReduce);
         }
-
-        
-
+        */
     }
 
     private IEnumerator Animation()

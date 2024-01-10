@@ -27,7 +27,8 @@ public class SkinManager : BaseUiController
 
     public void EquipSkin(int id)
     {
-        FindObjectOfType<SnowBall>().gameObject.GetComponent<MeshRenderer>().material = skins[id].skin;
+        //FindObjectOfType<T>().gameObject.GetComponent<MeshRenderer>().material = skins[id].skin;
+        //TODO: implement skins when we have time
         int skinPrice = skins[id].price;
         
         //skins[id].BuyButton
