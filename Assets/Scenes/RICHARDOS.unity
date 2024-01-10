@@ -366,11 +366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlayerSpawn: {fileID: 1652172098}
-  _SnowBallSpawn: {fileID: 1978090963}
-  _SnowManSpawn: {fileID: 565672817}
-  _MinScale: 0.9
-  _MaxScale: 1.1
-  LevelAddCoins: 70
 --- !u!1001 &72262251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5868,11 +5863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlayerSpawn: {fileID: 430928383}
-  _SnowBallSpawn: {fileID: 1093530321}
-  _SnowManSpawn: {fileID: 2007353692}
-  _MinScale: 0.55
-  _MaxScale: 2.2
-  LevelAddCoins: 150
 --- !u!1001 &785292933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9957,9 +9947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7732cbc8274e473d9f1dceab33d029a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LaserDeratizator: {fileID: 1714310597}
-  _SnowBallPrefab: {fileID: 5768058177999814378, guid: f967bd72f174048aabb443536ffc5756, type: 3}
-  _SnowManPregab: {fileID: 5305065865078410512, guid: cd91b359da2034df3b9c858d62c6ed84, type: 3}
   _LevelControllers:
   - {fileID: 34721573}
   - {fileID: 1755881443}
@@ -12876,11 +12863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlayerSpawn: {fileID: 1622656553}
-  _SnowBallSpawn: {fileID: 1465215857}
-  _SnowManSpawn: {fileID: 1886282270}
-  _MinScale: 0.55
-  _MaxScale: 1.4
-  LevelAddCoins: 150
 --- !u!4 &1731610482
 Transform:
   m_ObjectHideFlags: 0
@@ -13024,11 +13006,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlayerSpawn: {fileID: 974604544}
-  _SnowBallSpawn: {fileID: 2075274327}
-  _SnowManSpawn: {fileID: 819041704}
-  _MinScale: 0.7
-  _MaxScale: 3
-  LevelAddCoins: 50
 --- !u!4 &1755881444
 Transform:
   m_ObjectHideFlags: 0
@@ -16296,11 +16273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _PlayerSpawn: {fileID: 1237269423}
-  _SnowBallSpawn: {fileID: 1790821164}
-  _SnowManSpawn: {fileID: 237038628}
-  _MinScale: 1.6
-  _MaxScale: 1.8
-  LevelAddCoins: 200
 --- !u!1 &2130023074
 GameObject:
   m_ObjectHideFlags: 0
@@ -16758,19 +16730,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1319238741298875226, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8120874
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1319238741298875226, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1319238741298875226, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5835358
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1319238741298875226, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1319238741298875226, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16778,19 +16750,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1319238741298875226, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 71.399
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1319238741298875226, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1746780451135655267, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
+      propertyPath: m_LocalPosition.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1746780451135655267, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1746780451135655267, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
