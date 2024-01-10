@@ -26,6 +26,8 @@ public class PlayerManager : MonoBehaviour
     //[SerializeField] private ShopManager _ShopManager = null;
     //public ShopManager ShopManager => _ShopManager;
 
+    [SerializeField] PlayerStats _PlayerStats = null;
+    public PlayerStats PlayerStats => _PlayerStats;
 
     private void Awake()
     {
