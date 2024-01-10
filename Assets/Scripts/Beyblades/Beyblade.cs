@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BeybladeComponents/Beyblade")]
@@ -22,6 +23,26 @@ public class Beyblade : ScriptableObject
             default:
                 Debug.LogError("tak to je v pièi silnì :)");
                 return null;
+        }
+    }
+
+    /* 
+     * returns -1 when no valid stat was found :)
+     */
+    public int GetTotalStat(string stat)
+    {
+        switch(stat)
+        {
+            case "Damage":
+                return Top.Damage + Mid.Damage + Bottom.Damage;
+            case "Stamina":
+                return Top.Stamina + Mid.Stamina + Bottom.Stamina;
+            case "Speed":
+                return Top.Speed + Mid.Speed + Bottom.Speed;
+            case "Weight":
+                return Top.Weight + Mid.Weight + Bottom.Weight;
+            default:
+                return -1;
         }
     }
 }

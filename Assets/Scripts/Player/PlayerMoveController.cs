@@ -18,14 +18,14 @@ public class PlayerMoveController : MonoBehaviour
     public void Init()
     {
         _GameManager = GameManager.Get();
-        _PlayerManager = PlayerManager.Get();
+        _PlayerManager = gameObject.GetComponent<PlayerManager>();
         _CameraTrans = _GameManager.PlayerManager.MainCamera.transform;
         _rb = gameObject.GetComponent<Rigidbody>();
     }
 
     public void UpdateMove()
     {
-        Vector3 moveVec = new Vector3( Input.GetAxis("Horizontal") * _WalkSpeed, 0, Input.GetAxis("Vertical") * _WalkSpeed);
+        Vector3 moveVec = new Vector3( Input.GetAxis("Horizontal") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed")), 0, Input.GetAxis("Vertical") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed")));
 
         _rb.velocity = moveVec;
     }

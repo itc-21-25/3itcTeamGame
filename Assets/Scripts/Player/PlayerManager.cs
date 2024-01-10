@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    private static PlayerManager _instance = null;
-
     [SerializeField] private PlayerMoveController _PlayerMoveController = null;
     public PlayerMoveController PlayerMoveController => _PlayerMoveController;
 
@@ -29,20 +27,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] PlayerStats _PlayerStats = null;
     public PlayerStats PlayerStats => _PlayerStats;
 
-    private void Awake()
-    {
-        if (_instance == null)
-            _instance = this;
-    }
-
-    public static PlayerManager Get()
-    {
-        return _instance;
-    }
-
     public void Init()
-    {
-       
+    {  
         _PlayerMoveController.Init();
         _PlayerHandController.Init();
     }
