@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
         if (Time.timeScale > 0)
         {
             _PlayerManager.UpdatePlayer();
-            _LevelManager.UpdateLevel();
             _UiManager.UpdateUi();
 
             if (_SnowBall != null)

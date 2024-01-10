@@ -1,15 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private LaserDeratizator _LaserDeratizator = null;
-    public LaserDeratizator LaserDeratizator => _LaserDeratizator;
-    [SerializeField] private GameObject _SnowBallPrefab = null;
-    public GameObject SnowBallPrefab => _SnowBallPrefab;
-    [SerializeField] private GameObject _SnowManPregab = null;
-    public GameObject SnowManPrefab => _SnowManPregab;
     [SerializeField] private List<LevelController> _LevelControllers = new List<LevelController>();
     [SerializeField] private int _ActualLevel = 0;
 
@@ -22,9 +15,6 @@ public class LevelManager : MonoBehaviour
     {
         StartLevel(_ActualLevel);
     }
-
-
-  
 
     public bool IsNextLevelExist()
     {
@@ -59,10 +49,5 @@ public class LevelManager : MonoBehaviour
 
         _LevelControllers[_ActualLevel].Init();
         _LevelControllers[_ActualLevel].StartLevel();
-    }
-
-    public void UpdateLevel()
-    {
-        _LevelControllers[_ActualLevel].UpdateLevel();
     }
 }
