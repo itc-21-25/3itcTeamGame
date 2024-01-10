@@ -1,13 +1,11 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BeybladeComponents/Component")]
-public class Beyblade : ScriptableObject
+public class BeybladeComponent : ScriptableObject
 {
-    [field: SerializeField] int Damage;
-    [field: SerializeField] int Stamina;
-    [field: SerializeField] int Speed;
-    [field: SerializeField] int Weight;
-    [field: SerializeField] GameObject Prefab;
-
-
+    [field: SerializeField] public int Damage { get; private set; } = 0;
+    [field: SerializeField] public int Stamina { get; private set; } = 0;
+    [field: SerializeField] public int Speed { get; private set; } = 0;
+    [field: SerializeField] public int Weight { get; private set; } = 0;
+    [field: SerializeField] public GameObject Prefab { get; private set; }
 }
