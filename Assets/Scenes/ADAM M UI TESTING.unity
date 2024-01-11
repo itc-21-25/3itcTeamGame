@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 0}
+  m_AnchoredPosition: {x: -300, y: 0}
   m_SizeDelta: {x: 149.486, y: 97.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97969829
@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 97969830}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004112410}
+        m_TargetAssemblyTypeName: BeybladePartSelection, Assembly-CSharp
+        m_MethodName: BackBodyPart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &97969830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,16 +279,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185845957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2004112409}
+  m_Father: {fileID: 478231525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -91}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &252355553
@@ -449,7 +461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: -250}
+  m_AnchoredPosition: {x: -300, y: -150}
   m_SizeDelta: {x: 149.486, y: 97.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373878292
@@ -495,7 +507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 373878293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004112410}
+        m_TargetAssemblyTypeName: BeybladePartSelection, Assembly-CSharp
+        m_MethodName: BackBottomPart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &373878293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,6 +599,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &478231524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 478231525}
+  m_Layer: 5
+  m_Name: BeybladePartHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &478231525
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478231524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 520735418}
+  - {fileID: 1332340424}
+  - {fileID: 185845958}
+  m_Father: {fileID: 2004112409}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &520735417
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,16 +660,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520735417}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2004112409}
+  m_Father: {fileID: 478231525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 250}
+  m_AnchoredPosition: {x: 0, y: 102}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1025834123
@@ -1236,7 +1298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 250}
+  m_AnchoredPosition: {x: -300, y: 150}
   m_SizeDelta: {x: 149.486, y: 97.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327226558
@@ -1282,7 +1344,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1327226559}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004112410}
+        m_TargetAssemblyTypeName: BeybladePartSelection, Assembly-CSharp
+        m_MethodName: BackTopPart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1327226559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,12 +1418,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332340423}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 35, y: 35, z: 35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 2004112409}
+  m_Father: {fileID: 478231525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1528,7 +1602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: 250}
+  m_AnchoredPosition: {x: 300, y: 150}
   m_SizeDelta: {x: 149.486, y: 97.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1418645869
@@ -1574,7 +1648,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1418645870}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004112410}
+        m_TargetAssemblyTypeName: BeybladePartSelection, Assembly-CSharp
+        m_MethodName: NextTopPart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1418645870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1649,7 +1735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 808, y: -382}
+  m_AnchoredPosition: {x: 600, y: -400}
   m_SizeDelta: {x: 167.556, y: 78.357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1490568206
@@ -1770,7 +1856,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: 0}
+  m_AnchoredPosition: {x: 300, y: 0}
   m_SizeDelta: {x: 149.486, y: 97.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1494205095
@@ -1816,7 +1902,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1494205096}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004112410}
+        m_TargetAssemblyTypeName: BeybladePartSelection, Assembly-CSharp
+        m_MethodName: NextBodyPart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1494205096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2093,7 +2191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: -250}
+  m_AnchoredPosition: {x: 300, y: -150}
   m_SizeDelta: {x: 149.486, y: 97.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966867506
@@ -2139,7 +2237,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1966867507}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004112410}
+        m_TargetAssemblyTypeName: BeybladePartSelection, Assembly-CSharp
+        m_MethodName: NextBottomPart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1966867507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,6 +2300,7 @@ GameObject:
   - component: {fileID: 2004112408}
   - component: {fileID: 2004112407}
   - component: {fileID: 2004112406}
+  - component: {fileID: 2004112410}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2274,9 +2385,7 @@ RectTransform:
   m_Children:
   - {fileID: 441684062}
   - {fileID: 1490568205}
-  - {fileID: 520735418}
-  - {fileID: 1332340424}
-  - {fileID: 185845958}
+  - {fileID: 478231525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2284,6 +2393,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2004112410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004112405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9ce411130977641972f1804fed5fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topParts:
+  - {fileID: 8956358431508435567, guid: 95bfdb788f5c9fd4ba303190c6b95e99, type: 3}
+  - {fileID: 1939834032995177649, guid: d3cc79887d5710c4b9c5db7d7fbe7320, type: 3}
+  - {fileID: 7796851008704372640, guid: ad052484beb882e4a9bdab8060b717f3, type: 3}
+  bodyParts:
+  - {fileID: 6913031463902281727, guid: d9caedce914b02a4e95e9c8b06e0ade9, type: 3}
+  - {fileID: 6288361060052292242, guid: 84f7f093525f58944a989678b0895a88, type: 3}
+  - {fileID: 7996957806824465208, guid: 261a0985763298f42be001d25de95c2a, type: 3}
+  bottomParts:
+  - {fileID: 5366657809693589508, guid: 415499fa2ed2ca0468b9613c16ff1533, type: 3}
+  - {fileID: 7819058958977927252, guid: 25a56780a43bb4046b1b600384a83c7a, type: 3}
+  - {fileID: 5923877840872181874, guid: 81e133925b180d845a42591e7f8f757a, type: 3}
+  topHolder: {fileID: 520735417}
+  bodyHolder: {fileID: 1332340423}
+  bottomHolder: {fileID: 185845957}
+  holders: []
 --- !u!1 &2102053960
 GameObject:
   m_ObjectHideFlags: 0
