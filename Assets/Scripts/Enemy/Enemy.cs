@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [field: SerializeField] BeybladeComponent Head;
     [field: SerializeField] BeybladeComponent Body;
     [field: SerializeField] BeybladeComponent Legs;
+    [field: SerializeField] Transform ComponentParent;
 
     int _dmg;
     int _stm;
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour
     int _wgt;
     int _knockback;
     Transform _target;
+    Transform _player;
     void Start()
     {
         // Stats
@@ -21,6 +23,14 @@ public class Enemy : MonoBehaviour
         _spd = Head.Speed + Body.Speed + Legs.Speed;
         _wgt = Head.Weight + Body.Weight + Legs.Weight;
         _knockback = (_dmg * _spd) - _wgt;
+        _player = GameManager.Get().PlayerManager.transform;
+
+        for (int i = 0; i < ComponentParent.childCount; i++)
+            Destroy(ComponentParent.GetChild(0).gameObject);
+
+        Instantiate(Head.Prefab, ComponentParent);
+        Instantiate(Body.Prefab, ComponentParent);
+        Instantiate(Legs.Prefab, ComponentParent);
     }
 
     void Update()
@@ -34,28 +44,34 @@ public class Enemy : MonoBehaviour
         // TODO: Die
     }
 
-    private void SetTarget() => _target = FindNearest().transform;
-    public void SetTarget(Enemy enemy)
+    public void SetTarget()
     {
         if (_target == null)
-            _target = enemy.transform;
+            _target = FindNearest();
     }
     public void ResetTarget() => _target = null;
-    Enemy FindNearest()
+    Transform FindNearest()
     {
         LevelController _levelController = ((List<LevelController>)LevelManager.Instance.LevelControllers)[LevelManager.Instance.ActualLevelID];
 
         float _closestDis = float.MaxValue;
-        Enemy _closestEnemy = ((List<Enemy>)_levelController.Enemies)[0];
+        Transform _closestEnemy = ((List<Enemy>)_levelController.Enemies)[0].transform;
         foreach (Enemy _enemy in _levelController.Enemies)
         {
-            float _currDis = Vector3.Distance(transform.position, _enemy.transform.position);
-            if (_currDis <= _closestDis)
+            if (!_enemy.Equals(this))
             {
-                _closestDis = _currDis;
-                _closestEnemy = _enemy;
+                float _currDis = Vector3.Distance(transform.position, _enemy.transform.position);
+                if (_currDis <= _closestDis)
+                {
+                    _closestDis = _currDis;
+                    _closestEnemy = _enemy.transform;
+                }
             }
         }
+
+        if (Vector3.Distance(transform.position, _player.position) <= Vector3.Distance(transform.position, _closestEnemy.position))
+            _closestEnemy = _player.transform;
+
         return _closestEnemy;
     }
 }

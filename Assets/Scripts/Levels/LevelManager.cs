@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
     public bool IsNextLevelExist()
     {
-        if (_ActualLevel == _LevelControllers.Count)
+        if (_ActualLevel >= _LevelControllers.Count-1)
         {
             return false;
         }

@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
     private GameManager _GameManager = null;
     private PlayerManager _PlayerManager = null;
 
-    private List<Enemy> _Enemies = new List<Enemy>();
+    [field: SerializeField] private List<Enemy> _Enemies = new List<Enemy>();
     private List<Transform> _SpawnPositions = new List<Transform>();
 
     private bool _LevelStart = false;
