@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour
@@ -11,11 +9,11 @@ public class LevelController : MonoBehaviour
     private GameManager _GameManager = null;
     private PlayerManager _PlayerManager = null;
 
-    private List<GameObject> _MyGameobjects = new List<GameObject>();
+    private List<Enemy> _Enemies = new List<Enemy>();
     private List<Transform> _SpawnPositions = new List<Transform>();
 
     private bool _LevelStart = false;
-
+    public IReadOnlyCollection<Enemy> Enemies => _Enemies;
     public void Init()
     {
         _GameManager = GameManager.Get();
@@ -36,29 +34,27 @@ public class LevelController : MonoBehaviour
 
     public void StartLevel()
     {
-        for (int i = 0; i < _MyGameobjects.Count; i++)
-            Instantiate(_MyGameobjects[i].gameObject, _SpawnPositions[i].position, Quaternion.identity);
+        for (int i = 0; i < _Enemies.Count; i++)
+            Instantiate(_Enemies[i].gameObject, _SpawnPositions[i].position, Quaternion.identity);
 
         _PlayerManager.SetPosition(_PlayerSpawn.transform.position);
         _LevelStart = true;
     }
 
-    public void KilledEnemy(GameObject enemy)
+    public void KilledEnemy(Enemy enemy)
     {
-        if (_MyGameobjects.Contains(enemy))
-            _MyGameobjects.Remove(enemy);
+        if (_Enemies.Contains(enemy))
+            _Enemies.Remove(enemy);
 
-        if (_MyGameobjects.Count <= 0)
+        if (_Enemies.Count <= 0)
             EndLevel();
     }
     public void EndLevel()
     {
         _LevelStart = false;
         Debug.Log($"Finished level!");
-        for (int i = 0; i < _MyGameobjects.Count; i++)
-        {
-            Destroy(_MyGameobjects[i]);
-        }
+        for (int i = 0; i < _Enemies.Count; i++)
+            Destroy(_Enemies[i]);
 
         gameObject.SetActive(false);
     }

@@ -5,7 +5,15 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private List<LevelController> _LevelControllers = new List<LevelController>();
     [SerializeField] private int _ActualLevel = 0;
-
+    private static LevelManager _instance;
+    public static LevelManager Instance => _instance;
+    public int ActualLevelID => _ActualLevel;   
+    public IReadOnlyCollection<LevelController> LevelControllers => _LevelControllers;
+    private void Awake()
+    {
+        if (_instance == null)
+            _instance = this;
+    }
     public void Init()
     {
 
