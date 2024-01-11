@@ -48,3 +48,5 @@ ExportedObj/
 ehthumbs.db
 Thumbs.db
 *.log
+*.vsidx
+*.vsidx
