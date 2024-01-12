@@ -57,4 +57,8 @@ public class LevelManager : MonoBehaviour
         _LevelControllers[_ActualLevel].Init();
         _LevelControllers[_ActualLevel].StartLevel();
     }
+    public void ResetRun()
+    {
+
+    }
 }

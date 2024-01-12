@@ -39,10 +39,6 @@ public class GameManager : MonoBehaviour
         _PlayerManager.Init();
         _LevelManager.Init();
         _UiManager.Init();
-
-        //DEBUG
-        UnpauseGame();
-        _LevelManager.NextLevel();
     }
 
     private void Update()

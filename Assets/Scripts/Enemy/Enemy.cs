@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     Transform _target;
     Transform _player;
     Rigidbody _rb;
+    float _cd = 0;
+    float _maxCd = 2;
     void Start()
     {
         // Stats
@@ -43,6 +45,16 @@ public class Enemy : MonoBehaviour
     {
         if (_target != null)
             transform.position = Vector3.MoveTowards(transform.position, _target.position, Time.deltaTime * _spd);
+        if (transform.position.y <= -15)
+        {
+            _stm = -10;
+            Die();
+        }
+        _cd -= Time.deltaTime;
+        if (_cd <= 0)
+        {
+
+        }
         // TODO: Attack
         // TODO: Die
     }
@@ -86,10 +98,18 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerStats _stats = collision.gameObject.GetComponent<PlayerManager>().PlayerStats;
-            _stats.Hit(Head.Damage + Body.Damage + Legs.Damage);
+            _stats.Hit(_dmg);
             _rb.AddForce(collision.impulse.normalized * (_knockback));
 
             Hit(_stats);
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Enemy _enemy = collision.gameObject.GetComponent<Enemy>();
+            _enemy.Hit(_dmg);
+            _rb.AddForce(collision.impulse.normalized * (_knockback));
+
+            Hit(_enemy._dmg);
         }
     }
 
@@ -97,9 +117,20 @@ public class Enemy : MonoBehaviour
     {
         _stm -= _stats.Beyblade.GetTotalStat("Damage");
 
-        if (_stm <= 0)
-            Destroy(gameObject);
+        Die();
+    }
+    private void Hit(int dmg)
+    {
+        _stm -= dmg;
 
-        ((List<LevelController>)(GameManager.Get().LevelManager.LevelControllers))[GameManager.Get().LevelManager.ActualLevelID].KilledEnemy(this);
+        Die();
+    }
+    private void Die()
+    {
+        if (_stm <= 0)
+        {
+            ((List<LevelController>)(GameManager.Get().LevelManager.LevelControllers))[GameManager.Get().LevelManager.ActualLevelID].KilledEnemy(this);
+            Destroy(gameObject);
+        }
     }
 }

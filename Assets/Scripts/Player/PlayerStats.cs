@@ -17,7 +17,6 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("You died!");
             Destroy(gameObject);
-            GameManager.Get().LevelManager.EndLevel();
         }
     }
 }

@@ -60,7 +60,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 316.1, y: 350, z: -333.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7022404573565221075}
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Head: {fileID: 11400000, guid: 9247f83dac6e12d4983e8ff2779b2b58, type: 2}
   Body: {fileID: 11400000, guid: 30cee64a9576c9e4aae33263fe8f15e4, type: 2}
-  Legs: {fileID: 11400000, guid: 252b35acd4a51ea4585106bd4311c029, type: 2}
+  Legs: {fileID: 11400000, guid: 35ec1e5d010344645af143579c3d28c0, type: 2}
   ComponentParent: {fileID: 7022404573565221075}
 --- !u!54 &8548798671343590505
 Rigidbody:
@@ -90,7 +90,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6777128271618281944}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

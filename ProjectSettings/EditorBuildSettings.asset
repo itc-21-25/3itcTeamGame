@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PETR P.unity
+    guid: df49a6ab802b3374a90619d74ac63228
+  - enabled: 0
     path: Assets/Scenes/ADAM D.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

@@ -23,11 +23,9 @@ public class LevelController : MonoBehaviour
 
     public void Kill()
     {
-       
         _GameManager.PlayerManager.PlayerAudioManager.PlayDeadAudio();
-            _GameManager.UiManager.GameOverUi.Load();
-            _GameManager.PauseGame();
-            EndLevel();
+        _GameManager.UiManager.GameOverUi.Load();
+        _GameManager.PauseGame();
     }
 
     public void StartLevel()
@@ -51,8 +49,14 @@ public class LevelController : MonoBehaviour
     {
         _LevelStart = false;
         Debug.Log($"Finished level!");
+
         for (int i = 0; i < _Enemies.Count; i++)
             Destroy(_Enemies[i]);
+
+        if (GameManager.Get().LevelManager.IsNextLevelExist())
+            GameManager.Get().LevelManager.NextLevel();
+        else
+            Debug.Log("You won!");
 
         gameObject.SetActive(false);
     }

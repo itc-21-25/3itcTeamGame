@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class MainMenuUiController : BaseUiController
 {
+    [field: SerializeField] Canvas _SelectBeybladeScreen;
     public void QuitGame()
     {
         Application.Quit();
@@ -11,9 +11,21 @@ public class MainMenuUiController : BaseUiController
 
     public void NewGame()
     {
+        _UiManager.MainMenuUiController.Unload();
         _GameManager.LevelManager.StartLevel(0);
         _GameManager.UnpauseGame();
-        _UiManager.MainMenuUiController.Unload();
         Debug.Log("new game click");
+    }
+    public void SelectBeyblade()
+    {
+        if (!_SelectBeybladeScreen.enabled)
+            _SelectBeybladeScreen.enabled = true;
+    }
+    public void Exit()
+    {
+#if UNITY_EDITOR
+
+#endif
+        Application.Quit(420);
     }
 }

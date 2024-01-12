@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseUiController : MonoBehaviour
@@ -8,6 +6,12 @@ public class BaseUiController : MonoBehaviour
     protected GameManager _GameManager = null;
     protected UiManager _UiManager = null;
 
+    private void Start()
+    {
+        _MyCanvas = GetComponent<Canvas>();
+        _GameManager = GameManager.Get();
+        _UiManager = _GameManager.UiManager;
+    }
     public virtual void Init()
     {
         _MyCanvas = GetComponent<Canvas>();
