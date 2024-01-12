@@ -52,7 +52,6 @@ public class LevelManager : MonoBehaviour
     }
     public void StartLevel(int levelId)
     {
-
         _ActualLevel = levelId;
 
         _LevelControllers[_ActualLevel].Init();

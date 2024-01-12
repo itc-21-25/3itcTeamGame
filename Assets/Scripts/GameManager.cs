@@ -15,9 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UiManager _UiManager = null;
     public UiManager UiManager => _UiManager;
 
-
-   
-
     public static GameManager Get()
     {
         return _Instance;
@@ -45,6 +42,7 @@ public class GameManager : MonoBehaviour
 
         //DEBUG
         UnpauseGame();
+        _LevelManager.NextLevel();
     }
 
     private void Update()
@@ -70,9 +68,5 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _UiManager.LevelUiController.Load();
-    }
-
-    private void LateUpdate()
-    {
     }
 }

@@ -41,11 +41,4 @@ public class PlayerManager : MonoBehaviour
     {
         transform.position = position;
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        { 
-            // Apply knockback, ale to bychom museli mít do píèi funknèí modely nebo aspoò nìco, co by kurva fungovalo. Tøeba to, že bychom ten projekt mìli v URP by taky nebyl špatnej nápad. Mrdá mi tady z toho - Petr 11.01.2024 23:16
-        }
-    }
 }
