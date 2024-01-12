@@ -1,36 +1,18 @@
+<h1 align="center" id="title">BEYBLADE ALPHA BUILD</h1>
 
-**SnowBaller**
+<p align="center"><img src="https://github.com/dolezalll/3itcTeamGame/raw/main/.github/files/readme-gif.gif" alt="project-image"></p>
 
-SnowBaller je 3D hra vytvořená v Unity, ve které hráč ovládá sněhovou kouli. Cílem hry je koulit kouli dokud nebude dostatečně velká.
-
-  
-
-**Funkce**
-
-Sbíratelné bonusy, které zvyšují sílu a rychlost hráče
-
-Jednoduché ovládání pomocí klávesnice a myši
-
-
-
-
-**Instalace**
-
-Pro spuštění hry je potřeba mít nainstalovaný Unity Hub a Unity Editor verze **2020.3.23f1** nebo novější. 
-
+<p align="center"><img src="https://img.shields.io/badge/ALPHA_BUILD:-0.0.1.38-red" alt="shields"></p>
 
   
-**Ovládání**
+  
+<h2>🧐 Aktuální funkce v alpha buildu</h2>
 
- - Pohyb: W, A, S, D
-   
- - Házet sněhovou kouli: levé tlačítko myši
+Nejlepší výtah z projektu:
 
-   
-
- - Pohled: pohyb myši
-
-   
-
- - Pauza: Esc
-
+*   Game manager
+*   UI Manager
+*   Audio Manager
+*   Player mechanics with customatizations
+*   Level Manager
+*   Combat system v1
