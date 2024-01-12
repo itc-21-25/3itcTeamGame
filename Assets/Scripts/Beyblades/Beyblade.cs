@@ -1,16 +1,7 @@
 using System;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-
-[CreateAssetMenu(menuName = "BeybladeComponents/Component")]
-public class BeybladeComponent : ScriptableObject
-{
-    [field: SerializeField] public int Damage { get; private set; } = 0;
-    [field: SerializeField] public int Stamina { get; private set; } = 0;
-    [field: SerializeField] public int Speed { get; private set; } = 0;
-    [field: SerializeField] public int Weight { get; private set; } = 0;
-    [field: SerializeField] public GameObject Prefab { get; private set; }
-}
 
 [CreateAssetMenu(menuName = "BeybladeComponents/Beyblade")]
 public class Beyblade : ScriptableObject
@@ -32,6 +23,26 @@ public class Beyblade : ScriptableObject
             default:
                 Debug.LogError("tak to je v pièi silnì :)");
                 return null;
+        }
+    }
+
+    /* 
+     * returns -1 when no valid stat was found :)
+     */
+    public int GetTotalStat(string stat)
+    {
+        switch(stat)
+        {
+            case "Damage":
+                return Top.Damage + Mid.Damage + Bottom.Damage;
+            case "Stamina":
+                return Top.Stamina + Mid.Stamina + Bottom.Stamina;
+            case "Speed":
+                return Top.Speed + Mid.Speed + Bottom.Speed;
+            case "Weight":
+                return Top.Weight + Mid.Weight + Bottom.Weight;
+            default:
+                return -1;
         }
     }
 }

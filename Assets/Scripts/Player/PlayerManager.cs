@@ -6,13 +6,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    private static PlayerManager _instance = null;
-
     [SerializeField] private PlayerMoveController _PlayerMoveController = null;
     public PlayerMoveController PlayerMoveController => _PlayerMoveController;
-
-    [SerializeField] private PlayerHandController _PlayerHandController = null;
-    public PlayerHandController PlayerHandController => _PlayerHandController;
 
     [SerializeField] private Camera _MainCamera = null;
     public Camera MainCamera => _MainCamera;
@@ -20,39 +15,37 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private PlayerAudioManager _PlayerAudioManager = null;
     public PlayerAudioManager PlayerAudioManager => _PlayerAudioManager;
 
-    [SerializeField] private PlayerCashManager _PlayerCashManager = null;
-    public PlayerCashManager PlayerCashManager => _PlayerCashManager;
+    [SerializeField] PlayerStats _PlayerStats = null;
+    public PlayerStats PlayerStats => _PlayerStats;
 
-    //[SerializeField] private ShopManager _ShopManager = null;
-    //public ShopManager ShopManager => _ShopManager;
-
-
-    private void Awake()
-    {
-        if (_instance == null)
-            _instance = this;
-    }
-
-    public static PlayerManager Get()
-    {
-        return _instance;
-    }
+    [field: SerializeField] Transform ComponentParent;
 
     public void Init()
-    {
-       
+    {  
         _PlayerMoveController.Init();
-        _PlayerHandController.Init();
+
+        for (int i = 0; i < ComponentParent.childCount; i++)
+            Destroy(ComponentParent.GetChild(0).gameObject);
+
+        Instantiate(_PlayerStats.Beyblade.Top.Prefab, ComponentParent);
+        Instantiate(_PlayerStats.Beyblade.Mid.Prefab, ComponentParent);
+        Instantiate(_PlayerStats.Beyblade.Bottom.Prefab, ComponentParent);
     }
 
     public void UpdatePlayer()
     {
         _PlayerMoveController.UpdateMove();
-        _PlayerHandController.UpdateHand();
     }
 
     public void SetPosition(Vector3 position)
     {
         transform.position = position;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        { 
+            // Apply knockback, ale to bychom museli mít do píèi funknèí modely nebo aspoò nìco, co by kurva fungovalo. Tøeba to, že bychom ten projekt mìli v URP by taky nebyl špatnej nápad. Mrdá mi tady z toho - Petr 11.01.2024 23:16
+        }
     }
 }

@@ -16788,6 +16788,10 @@ PrefabInstance:
       propertyPath: _MouseSensitive
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8403868347604310295, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
+      propertyPath: _bb
+      value: 
+      objectReference: {fileID: 11400000, guid: b691528d849d5ed4282c04ebee822d42, type: 2}
     m_RemovedComponents:
     - {fileID: 5780595340844531036, guid: 8bcf769d8cfac413b842e05a68037a72, type: 3}
     m_RemovedGameObjects: []

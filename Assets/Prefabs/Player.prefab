@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6253295051277426291}
   - component: {fileID: 1001584537231168161}
   - component: {fileID: 8336109879910807736}
+  - component: {fileID: 8403868347604310295}
   - component: {fileID: 3656990125227748342}
   - component: {fileID: 2403185415875969164}
   - component: {fileID: 8709128041148544689}
@@ -57,6 +58,7 @@ MonoBehaviour:
   _MainCamera: {fileID: 1195505728335838385}
   _PlayerAudioManager: {fileID: 3656990125227748342}
   _PlayerCashManager: {fileID: 8336109879910807736}
+  _PlayerStats: {fileID: 8403868347604310295}
 --- !u!114 &6253295051277426291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +102,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Cash: 0
+--- !u!114 &8403868347604310295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4829181571366565493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd3470302b51a641aaa9c7fa9fe88d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bb: {fileID: 0}
 --- !u!114 &3656990125227748342
 MonoBehaviour:
   m_ObjectHideFlags: 0

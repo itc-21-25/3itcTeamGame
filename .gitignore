@@ -47,3 +47,6 @@ ExportedObj/
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.log
+*.vsidx
+*.vsidx
