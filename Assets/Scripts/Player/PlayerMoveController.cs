@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMoveController : MonoBehaviour
 {
     [SerializeField] private float _WalkSpeed = 2.5f;
-    [SerializeField] private float _MouseSensitive = 100f;
+    [SerializeField] private float _MouseSensitive = 2f;
     [SerializeField] private float _MaxXAngle = 60f;
 
     Rigidbody _rb = null;
@@ -19,8 +19,10 @@ public class PlayerMoveController : MonoBehaviour
     public void UpdateMove()
     {
         Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed")), _rb.velocity.y, Input.GetAxis("Vertical") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed"))).normalized;
+
         float xRot = Input.GetAxis("Mouse X");
-        transform.Rotate(0, xRot*_MouseSensitive, 0);
-        _rb.velocity = moveVec * transform.forward;
+        transform.Rotate(0, xRot * _MouseSensitive, 0);
+
+        _rb.velocity = moveVec * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed"));
     }
 }

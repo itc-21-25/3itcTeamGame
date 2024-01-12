@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 public class MainMenuUiController : BaseUiController
@@ -12,7 +11,7 @@ public class MainMenuUiController : BaseUiController
     public void NewGame()
     {
         _UiManager.MainMenuUiController.Unload();
-        _GameManager.LevelManager.StartLevel(2);
+        _GameManager.LevelManager.StartLevel(0);
         _GameManager.UnpauseGame();
         Debug.Log("new game click");
     }
