@@ -13,6 +13,7 @@ public class BeybladePartSelection : MonoBehaviour
     [SerializeField] private GameObject bodyHolder;
     [SerializeField] private GameObject bottomHolder;
     [SerializeField] private List<GameObject> holders = new List<GameObject>();
+    public static List<GameObject> playerParts = new List<GameObject>();
 
     int topIndex = 0;
     int bottomIndex = 0;
@@ -114,5 +115,12 @@ public class BeybladePartSelection : MonoBehaviour
             bottomIndex--;
         }
         SetHolderPrefabs();
+    }
+    public void SaveBeyblade()
+    {
+        playerParts.Clear();
+        playerParts.Add(topParts[topIndex]);
+        playerParts.Add(bodyParts[bodyIndex]);
+        playerParts.Add(bottomParts[bottomIndex]);
     }
 }
