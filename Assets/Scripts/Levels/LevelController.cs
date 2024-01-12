@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField] private GameObject _PlayerSpawn = null;
+    [SerializeField] private Transform _PlayerSpawn = null;
 
     private LevelManager _LevelManager = null;
     private GameManager _GameManager = null;
     private PlayerManager _PlayerManager = null;
 
     [field: SerializeField] private List<Enemy> _Enemies = new List<Enemy>();
-    private List<Transform> _SpawnPositions = new List<Transform>();
 
     private bool _LevelStart = false;
     public IReadOnlyCollection<Enemy> Enemies => _Enemies;
@@ -34,9 +33,9 @@ public class LevelController : MonoBehaviour
     public void StartLevel()
     {
         for (int i = 0; i < _Enemies.Count; i++)
-            Instantiate(_Enemies[i].gameObject, _SpawnPositions[i].position, Quaternion.identity);
+            _Enemies[i].gameObject.SetActive(true);
 
-        _PlayerManager.SetPosition(_PlayerSpawn.transform.position);
+        _PlayerManager.SetPosition(_PlayerSpawn.position);  
         _LevelStart = true;
     }
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     int _knockback;
     Transform _target;
     Transform _player;
+    Rigidbody _rb;
     void Start()
     {
         // Stats
@@ -31,24 +33,20 @@ public class Enemy : MonoBehaviour
         Instantiate(Head.Prefab, ComponentParent);
         Instantiate(Body.Prefab, ComponentParent);
         Instantiate(Legs.Prefab, ComponentParent);
+
+        _rb = GetComponent<Rigidbody>();
+        // TODO: Find nearest target
+        StartCoroutine("FindEnemy");
     }
 
     void Update()
     {
-        // TODO: Find nearest target
-        if (_target == null)
-            SetTarget();
         if (_target != null)
             transform.position = Vector3.MoveTowards(transform.position, _target.position, Time.deltaTime * _spd);
         // TODO: Attack
         // TODO: Die
     }
 
-    public void SetTarget()
-    {
-        if (_target == null)
-            _target = FindNearest();
-    }
     public void ResetTarget() => _target = null;
     Transform FindNearest()
     {
@@ -73,5 +71,35 @@ public class Enemy : MonoBehaviour
             _closestEnemy = _player.transform;
 
         return _closestEnemy;
+    }
+    IEnumerator FindEnemy()
+    {
+        while (true)
+        {
+            _target = FindNearest();
+
+            yield return new WaitForSeconds(2f);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerStats _stats = collision.gameObject.GetComponent<PlayerManager>().PlayerStats;
+            _stats.Hit(Head.Damage + Body.Damage + Legs.Damage);
+            _rb.AddForce(collision.impulse.normalized * (_knockback));
+
+            Hit(_stats);
+        }
+    }
+
+    private void Hit(PlayerStats _stats)
+    {
+        _stm -= _stats.Beyblade.GetTotalStat("Damage");
+
+        if (_stm <= 0)
+            Destroy(gameObject);
+
+        ((List<LevelController>)(GameManager.Get().LevelManager.LevelControllers))[GameManager.Get().LevelManager.ActualLevelID].KilledEnemy(this);
     }
 }
