@@ -45,6 +45,24 @@ public class Beyblade : ScriptableObject
                 return -1;
         }
     }
+   public void SetComp(BeybladeComponent comp)
+    {
+        switch(comp.Part)
+        {
+            case BeybladeParts.Top:
+                Top = comp;
+                break;
+            case BeybladeParts.Mid:
+                Mid = comp;
+                break;
+            case BeybladeParts.Bottom:
+                Bottom = comp;
+                break;
+            default:
+                Debug.LogError("tak to je v pièi silnì :)");
+                break;
+        }
+    }
 }
 public enum BeybladeParts
 {

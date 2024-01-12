@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [field: SerializeField] BeybladeComponent Head;
-    [field: SerializeField] BeybladeComponent Body;
-    [field: SerializeField] BeybladeComponent Legs;
+    GameObject Head;
+    GameObject Body;
+    GameObject Legs;
     [field: SerializeField] Transform ComponentParent;
 
     int _dmg;
@@ -22,19 +23,20 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         // Stats
-        _dmg = Head.Damage + Body.Damage + Legs.Damage;
-        _stm = Head.Stamina + Body.Stamina + Legs.Stamina;
-        _spd = Head.Speed + Body.Speed + Legs.Speed;
-        _wgt = Head.Weight + Body.Weight + Legs.Weight;
+        SelectParts();
+        _dmg = Head.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Damage + Body.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Damage + Legs.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Damage;
+        _stm = Head.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Stamina + Body.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Stamina + Legs.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Stamina;
+        _spd = Head.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Speed + Body.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Speed + Legs.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Speed;
+        _wgt = Head.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Weight + Body.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Weight + Legs.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Weight;
         _knockback = (_dmg * _spd) - _wgt;
         _player = GameManager.Get().PlayerManager.transform;
 
         for (int i = 0; i < ComponentParent.childCount; i++)
             Destroy(ComponentParent.GetChild(0).gameObject);
 
-        Instantiate(Head.Prefab, ComponentParent);
-        Instantiate(Body.Prefab, ComponentParent);
-        Instantiate(Legs.Prefab, ComponentParent);
+        Instantiate(Head, ComponentParent);
+        Instantiate(Body, ComponentParent);
+        Instantiate(Legs, ComponentParent);
 
         _rb = GetComponent<Rigidbody>();
         // TODO: Find nearest target
@@ -131,6 +133,27 @@ public class Enemy : MonoBehaviour
         {
             ((List<LevelController>)(GameManager.Get().LevelManager.LevelControllers))[GameManager.Get().LevelManager.ActualLevelID].KilledEnemy(this);
             Destroy(gameObject);
+        }
+    }
+    private void SelectParts()
+    {
+        foreach (var item in GameManager.Get().CreateBeybladeBuild())
+        {
+            switch (item.GetComponent<BeybladeComponentHolder>().BeybladeComponent.Part) {
+                case BeybladeParts.Top:
+                    Head = item.gameObject;
+                    break;
+                case BeybladeParts.Mid:
+                    Body = item.gameObject;
+                    break;
+                case BeybladeParts.Bottom:
+                    Legs = item.gameObject;
+                    break;
+                default:
+                    Debug.LogError("tak to je v pièi silnì :)");
+                    break;
+            }
+
         }
     }
 }

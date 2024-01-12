@@ -15,6 +15,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UiManager _UiManager = null;
     public UiManager UiManager => _UiManager;
 
+    [SerializeField] private List<GameObject> _TopParts = null;
+    public List<GameObject> TopParts => _TopParts;
+
+    [SerializeField] private List<GameObject> _MidParts = null;
+    public List<GameObject> MidParts => _MidParts;
+
+    [SerializeField] private List<GameObject> _BottomParts = null;
+    public List<GameObject> BottomParts => _BottomParts;
+
+    public Camera NIGGACAM;
+    public Camera NIGGAUIKUKNAKAMERU;
+    public GameObject canvasNiggaHolder;
+    
     public static GameManager Get()
     {
         return _Instance;
@@ -33,7 +46,17 @@ public class GameManager : MonoBehaviour
 
         Init();
     }
-
+    private void FixedUpdate()
+    {
+        if (canvasNiggaHolder.gameObject.activeInHierarchy) { 
+            NIGGAUIKUKNAKAMERU.gameObject.SetActive(true); 
+            NIGGACAM.gameObject.SetActive(false);
+        }
+        else { 
+            NIGGACAM.gameObject.SetActive(true);
+            NIGGAUIKUKNAKAMERU.gameObject.SetActive(false) ;
+        }
+    }
     public void Init()
     {
         _PlayerManager.Init();
@@ -64,5 +87,13 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _UiManager.LevelUiController.Load();
+    }
+    public List<GameObject> CreateBeybladeBuild()
+    {
+        List<GameObject> selectedParts = new List<GameObject>();
+        selectedParts.Add(_TopParts[Random.Range(0,_TopParts.Count)]);
+        selectedParts.Add(_MidParts[Random.Range(0, _MidParts.Count)]);
+        selectedParts.Add(_BottomParts[Random.Range(0, _BottomParts.Count)]);
+        return selectedParts;
     }
 }

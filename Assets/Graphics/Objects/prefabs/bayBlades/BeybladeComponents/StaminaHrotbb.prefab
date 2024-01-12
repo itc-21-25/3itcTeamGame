@@ -341,6 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7478561564669727470}
+  - component: {fileID: -7757427135641004170}
   m_Layer: 0
   m_Name: StaminaHrotbb
   m_TagString: Untagged
@@ -367,3 +368,16 @@ Transform:
   - {fileID: 7045911714830403883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7757427135641004170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819058958977927252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670e29cc430c9f94dbfc0c28c9a7d1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeybladeComponent: {fileID: 11400000, guid: 3263370dd6de7ba4f94648214962adc6, type: 2}

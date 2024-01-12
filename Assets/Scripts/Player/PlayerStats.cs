@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -7,7 +8,11 @@ public class PlayerStats : MonoBehaviour
 
     int hp;
 
-    private void Start() => hp = _bb.GetTotalStat("Stamina");
+    private void Start()
+    {
+        SetParts();
+        hp = _bb.GetTotalStat("Stamina");
+    }
 
     public void Hit(int dmg)
     {
@@ -17,6 +22,14 @@ public class PlayerStats : MonoBehaviour
         {
             Debug.Log("You died!");
             Destroy(gameObject);
+        }
+    }
+    public void SetParts()
+    {
+        foreach(Transform child in gameObject.transform.GetComponentInChildren<Transform>())
+        {
+            if(child.gameObject.GetComponent<BeybladeComponentHolder>()  != null)
+                _bb.SetComp(child.gameObject.GetComponent<BeybladeComponentHolder>().BeybladeComponent);
         }
     }
 }

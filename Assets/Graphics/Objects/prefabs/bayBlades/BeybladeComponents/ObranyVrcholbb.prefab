@@ -55,5 +55,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd54b0a6d9aa6e14bbe2935e7d1319bf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 146165969248062038}
   m_SourcePrefab: {fileID: 100100000, guid: fd54b0a6d9aa6e14bbe2935e7d1319bf, type: 3}
+--- !u!1 &8956358431508435567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fd54b0a6d9aa6e14bbe2935e7d1319bf, type: 3}
+  m_PrefabInstance: {fileID: 8109304367681613630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &146165969248062038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8956358431508435567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670e29cc430c9f94dbfc0c28c9a7d1cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeybladeComponent: {fileID: 11400000, guid: 6dc858992fd9d984aae57f24aa1ff464, type: 2}
