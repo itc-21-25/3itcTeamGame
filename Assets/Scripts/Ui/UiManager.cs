@@ -17,16 +17,12 @@ public class UiManager : MonoBehaviour
     [SerializeField] private LevelUiController _LevelUiController = null;
     public LevelUiController LevelUiController => _LevelUiController;
 
-    [SerializeField] private ShopManager _ShopManager = null;
-    public ShopManager ShopManager => _ShopManager;
-
     [SerializeField] private Tutorial _Tutorial = null;
     public Tutorial Tutorial => _Tutorial;
 
     public void Init()
     {
         
-        _ShopManager.Init();
         _MainMenuUiController.Init();
         _GameOverUi.Init();
         _LevelWinUiController.Init();

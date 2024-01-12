@@ -27,6 +27,11 @@ public class PlayerManager : MonoBehaviour
         for (int i = 0; i < ComponentParent.childCount; i++)
             Destroy(ComponentParent.GetChild(0).gameObject);
 
+        // Null check, so the code can be tested before we have the components done
+        //TODO: Remove null check, when not needed anymore
+        if (_PlayerStats.Beyblade.Top == null || _PlayerStats.Beyblade.Bottom == null || _PlayerStats.Beyblade.Mid == null)
+            return;
+
         Instantiate(_PlayerStats.Beyblade.Top.Prefab, ComponentParent);
         Instantiate(_PlayerStats.Beyblade.Mid.Prefab, ComponentParent);
         Instantiate(_PlayerStats.Beyblade.Bottom.Prefab, ComponentParent);

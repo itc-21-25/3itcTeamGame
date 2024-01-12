@@ -35,7 +35,7 @@ public class LevelController : MonoBehaviour
         for (int i = 0; i < _Enemies.Count; i++)
             _Enemies[i].gameObject.SetActive(true);
 
-        _PlayerManager.SetPosition(_PlayerSpawn.position);  
+        _PlayerManager.SetPosition(_PlayerSpawn.position);
         _LevelStart = true;
     }
 
