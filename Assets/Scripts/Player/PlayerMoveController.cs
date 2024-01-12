@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMoveController : MonoBehaviour
@@ -22,7 +19,7 @@ public class PlayerMoveController : MonoBehaviour
 
     public void UpdateMove()
     {
-        Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed")), 0, Input.GetAxis("Vertical") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed")));
+        Vector3 moveVec = new Vector3(Input.GetAxis("Horizontal") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed")), _rb.velocity.y, Input.GetAxis("Vertical") * (_WalkSpeed + _PlayerManager.PlayerStats.Beyblade.GetTotalStat("Speed")));
 
         _rb.velocity = moveVec;
     }
