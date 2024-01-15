@@ -1,4 +1,4 @@
-name: Build project 🏗️🚧👷  📟 github server build  (alpha version)
+name: Build project 🏗️🚧👷  📟 (alpha version)
 
 on: workflow_dispatch
 
